@@ -8,7 +8,11 @@ class Output extends Component {
     };
   }
   render() {
-    return <div className="output">{this.props.value}</div>;
+    return (
+      <div className="card text-black bg-light mb-3 p-4 output">
+        {this.props.value}
+      </div>
+    );
   }
 }
 

@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
 import Output from "./components/Output";
-import Select from "./components/Controls/Select";
+// import Select from "./components/Controls/Select";
 import Text from "./components/Controls/Text";
+import Format from "./components/Controls/Format";
 
 class App extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class App extends Component {
     this.state = {
       type: "all-meat",
       paras: 4,
-      format: "html",
+      format: "json",
       html: true,
       text: "",
     };
@@ -44,8 +45,11 @@ class App extends Component {
       });
   }
 
-  showHtml(x) {
-    this.setState({ html: x }, this.getSampleText);
+  // showHtml(x) {
+  //   this.setState({ html: x }, this.getSampleText);
+  // }
+  showFormat(y) {
+    this.setState({ format: y }, this.getSampleText);
   }
 
   changeParas(number) {
@@ -59,17 +63,24 @@ class App extends Component {
         <hr />
         <form className="form-inline">
           <div className="form-group">
-            <label>Paragraphs</label>
+            <label>Paragraphs:</label>
             <Text
               value={this.state.paras}
               onChange={this.changeParas.bind(this)}
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label>Include HTML:</label>
             <Select
               value={this.state.html}
               onChange={this.showHtml.bind(this)}
+            />
+          </div> */}
+          <div className="form-group">
+            <label>Show Format:</label>
+            <Format
+              value={this.state.format}
+              onChange={this.showFormat.bind(this)}
             />
           </div>
         </form>
