@@ -17,7 +17,11 @@ class Format extends Component {
   render() {
     return (
       <div>
-        <select className="form-control" onChange={this.onChange.bind(this)}>
+        <select
+          className="form-control"
+          placeholder="Select an option"
+          onChange={this.onChange.bind(this)}
+        >
           <option value="json">JSON</option>
           <option value="html">HTML</option>
           <option value="text">TEXT</option>

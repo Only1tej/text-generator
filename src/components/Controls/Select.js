@@ -17,7 +17,11 @@ class Select extends Component {
   render() {
     return (
       <div>
-        <select className="form-control" onChange={this.onChange.bind(this)}>
+        <select
+          className="form-control"
+          placeholder="Select an option"
+          onChange={this.onChange.bind(this)}
+        >
           <option value="true">Yes</option>
           <option value="false">No</option>
         </select>
